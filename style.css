@@ -1,0 +1,363 @@
+html {
+    scroll-behavior: smooth;
+}
+ 
+ /* Navigation Bar Styles */
+ .navbar {
+     width: 100%;
+     background-color: rgba(0, 0, 0, 0.8);
+     /* Semi-transparent background */
+     position: fixed;
+     /* Stays at the top of the page */
+     top: 0;
+     left: 0;
+     z-index: 1000;
+     /* Higher than the background */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 10px 0;
+ }
+
+ .navbar-container {
+     width: 100%;
+     max-width: 1200px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 20px;
+ }
+
+ .navbar-logo {
+     color: #fff;
+     font-size: 24px;
+     text-decoration: none;
+     font-weight: bold;
+ }
+
+ .navbar-menu {
+     list-style: none;
+     display: flex;
+     margin: 0;
+     padding: 0;
+ }
+
+ .navbar-menu li {
+     margin: 0 15px;
+ }
+
+ .navbar-menu a {
+     color: #fff;
+     text-decoration: none;
+     font-size: 18px;
+     padding: 10px;
+     transition: color 0.3s ease;
+ }
+
+ .navbar-menu a:hover {
+     color: #ADD8E6;
+     /* Light blue on hover */
+ }
+
+ #bg-wrap {
+     position: fixed;
+     /* Stays fixed behind all content */
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     z-index: -1;
+     /* Ensure the background stays behind the content */
+     overflow: hidden;
+     pointer-events: none;
+     /* So that it doesn't interfere with clicks */
+     min-height: 130%;
+     /* Ensure background stretches with content */
+ }
+
+ /* Body styles (adjusted to allow background visibility) */
+ body {
+     margin: 0;
+     font-family: sans-serif;
+     background-color: transparent;
+     /* Make sure the body background is transparent */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .cast-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+     /* Adds space between cast members */
+     flex-wrap: wrap;
+     /* Allows wrapping to next line if needed */
+     padding: 20px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Grey drop shadow */
+     padding: 20px; /* Add padding to ensure content doesn't touch the shadow */
+     margin: 20px; /* Margin to add space between sections */
+     border-radius: 8px; /* Optional: rounded corners for a smoother look */
+ }
+
+ .cast-member {
+     text-align: center;
+     flex: 1 1 auto;
+     /* Allows flexibility in resizing */
+     max-width: 200px;
+     /* Set a max width to ensure images aren't too large */
+ }
+
+ .cast-member img {
+     height: 200px;
+     /* Set height to 200px */
+     width: auto;
+     /* Auto width to maintain aspect ratio */
+     background-color: #ddd;
+     border-radius: 50%;
+     margin-bottom: 10px;
+ }
+
+ .cast-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000; /* Adjust color as needed */
+}
+
+
+ /* Ensure that sections are flex containers for dynamic adjustment */
+ .section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+ /* Set up the phone container to use relative positioning */
+ .smartphone-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+     /* Relative positioning for button placement */
+     width: 300px;
+     /* Ensure consistent width for the container */
+     margin-top: 40px;
+     /* Add a small buffer at the top */
+ }
+
+ /* Position the button centered on the phone */
+ .smartphone-button {
+     background-color: #ADD8E6;
+     color: #000;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 16px;
+     position: absolute;
+     /* Absolutely positioned relative to smartphone-container */
+     bottom: 50%;
+     /* Adjust this value based on where you want the button on the phone */
+     left: 50%;
+     transform: translate(-50%, 0);
+     /* Horizontally center the button */
+     animation: bounce 0.5s infinite ease-in-out;
+     /* Keep the bounce animation */
+     z-index: 1;
+     /* Ensure the button stays above the phone image */
+ }
+
+ /* Smartphone animation */
+ .smartphone {
+     width: 300px;
+     height: auto;
+     /*animation: tilt 0.3s infinite ease-in-out;*/
+ }
+
+
+ /* Stop animation class */
+ .stop-animation {
+     animation: none;
+     /* Disables animations */
+ }
+
+ .smartphone-button:hover {
+     background-color: #87CEFA;
+     /* Slightly darker blue on hover */
+ }
+
+ /* Send Message Button: Keeps its original styles */
+ .send-message-button {
+     background-color: #ADD8E6;
+     /* Light blue button */
+     color: #000;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 16px;
+ }
+
+ .send-message-button:hover {
+     background-color: #87CEFA;
+     /* Slightly darker blue on hover */
+ }
+
+ /* Video Section */
+ .video-section {
+     position: relative;
+     width: 100vw;
+     height: 100vh;
+ }
+
+ .video-container {
+     width: 100vw;
+     height: 100vh;
+ }
+
+ .video-container video {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ /* Transparent About Text Box */
+ .about-text {
+     position: absolute;
+     top: 0;
+     left: 0;
+     background-color: rgba(186, 60, 236, 0.5);
+     /* Semi-transparent background */
+     color: white;
+     padding: 20px;
+     width: 300px;
+     height: 90vh;
+     display: flex;
+     align-items: center;
+ }
+
+ .about-text p {
+     margin: 0;
+     font-size: 18px;
+ }
+
+ /* Hide About Text when video starts */
+ .hidden {
+     display: none;
+ }
+
+ .contact-form {
+    width: 30%; /* Increase width to 90% of the parent */
+    max-width: 1200px; /* Set a large max width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Grey drop shadow */
+    padding: 20px; /* Add padding to ensure content doesn't touch the shadow */
+    margin: 20px; /* Margin to add space between sections */
+    border-radius: 8px; /* Optional: rounded corners for a smoother look */
+}
+
+
+ .contact-form label,
+ .contact-form textarea {
+     display: block;
+     margin-bottom: 10px;
+ }
+
+ .contact-form textarea {
+     width: 100%;
+     height: 150px;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     resize: vertical;
+ }
+
+ .contact-form button {
+     background-color: #ADD8E6;
+     /* Light blue button */
+     color: #000;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 16px;
+ }
+
+ .contact-form button:hover {
+     background-color: #87CEFA;
+     /* Slightly darker blue on hover */
+ }
+
+ @keyframes bounce {
+
+     0%,
+     100% {
+         transform: translate(-50%, -50%) translateY(0);
+     }
+
+     50% {
+         transform: translate(-50%, -50%) translateY(-10px);
+     }
+ }
+
+ .hidden-section {
+    
+    display: none; /* Hide the section initially */
+    position: relative;
+    bottom: 0;
+    left: 100px;
+    width: 850px;; /* Full width */
+    padding: 50px;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden-content {
+    display: flex;
+    align-items: center;
+    width: 80%; /* Adjust width as needed */
+    max-width: 1200px; /* Ensure it doesn't get too wide */
+}
+
+.side-gif {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin: 0 10px; /* Space between video and GIFs */
+}
+
+.hidden-section video {
+    width: 50%;
+    max-width: 600px; /* Adjust max width as needed */
+    height: auto;
+    object-fit: cover;
+}
+
+.toggle-button {
+    position: relative;
+    bottom: 20px; /* Space from the bottom */
+    left: 20px; /* Space from the left */
+    background-color: #ADD8E6; /* Light blue */
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000; /* Make sure it's on top */
+}
+
+.toggle-button:hover {
+    background-color: #87CEFA; /* Slightly darker blue on hover */
+}
